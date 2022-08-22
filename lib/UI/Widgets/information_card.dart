@@ -1,5 +1,6 @@
-import 'package:fly_cliente/Constants/contants.dart';
+import 'package:fly_admin/UI/Widgets/custom_card.dart';
 
+import '../../Constants/contants.dart';
 import 'widgets.dart';
 
 class InformationCard extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fly_cliente/UI/Widgets/fligthDetailWidgets/line.dart';
+import 'package:fly_admin/UI/Widgets/fligthDetailWidgets/line.dart';
 
 import '../../../Constants/contants.dart';
 import 'flight_details_body.dart';

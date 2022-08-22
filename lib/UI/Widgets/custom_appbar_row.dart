@@ -1,4 +1,5 @@
 import '../../Constants/contants.dart';
+import 'custom_circle_avatar.dart';
 import 'widgets.dart';
 
 class AppBarRow extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:fly_cliente/UI/Widgets/separador.dart';
+import 'package:fly_admin/UI/Widgets/separador.dart';
 
 import 'widgets.dart';
 
