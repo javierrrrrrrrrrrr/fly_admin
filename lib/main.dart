@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'UI/Pages/estadistic_page.dart';
 import 'UI/Pages/login_page.dart';
 
 void main() => runApp(const MyApp());
@@ -16,11 +17,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/login': (context) => const LoginPage(),
-        // '/airlines': (context) => const AirlineInfoPage(),
-        //  '/search': (context) => const SearchPage(),
-        //  '/vermas': (context) => const MoreDetailsOfert(),
-        //   '/result': (context) => const SearchResult(),
-        //   '/MoreDetailsFly': (context) => const MoreDetailsFly(),
+        '/estadistica': (context) => const StaticPage(),
       },
     );
   }

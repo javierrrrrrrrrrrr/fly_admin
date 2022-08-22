@@ -85,25 +85,30 @@ class Contenedor2 extends StatelessWidget {
             height: size.height * 0.05,
           ),
 
-          Container(
-            height: size.height * 0.07,
-            width: size.width * 0.9,
-            decoration: const BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 4,
-                  color: Colors.grey,
-                  offset: Offset(0.0, 0.0),
-                ),
-              ],
-            ),
-            // border: Border.all(color: Colors.grey, width: 1)),
-            child: const Center(
-              child: Text("Sign in",
-                  maxLines: 1,
-                  style: TextStyle(
-                      fontSize: 22, color: Color.fromRGBO(69, 104, 126, 1))),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed('/estadistica');
+            },
+            child: Container(
+              height: size.height * 0.07,
+              width: size.width * 0.9,
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 4,
+                    color: Colors.grey,
+                    offset: Offset(0.0, 0.0),
+                  ),
+                ],
+              ),
+              // border: Border.all(color: Colors.grey, width: 1)),
+              child: const Center(
+                child: Text("Sign in",
+                    maxLines: 1,
+                    style: TextStyle(
+                        fontSize: 22, color: Color.fromRGBO(69, 104, 126, 1))),
+              ),
             ),
           )
           // ),
