@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'UI/Pages/login_page.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -11,9 +13,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       theme: ThemeData(fontFamily: 'LexendDeca'),
-      initialRoute: '/home',
-      routes: const {
-        // '/home': (context) => const HomePage(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
         // '/airlines': (context) => const AirlineInfoPage(),
         //  '/search': (context) => const SearchPage(),
         //  '/vermas': (context) => const MoreDetailsOfert(),
