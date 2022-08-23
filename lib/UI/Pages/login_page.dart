@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fly_admin/Constants/contants.dart';
-import 'package:fly_admin/UI/Widgets/imputField.dart';
+import 'package:fly_admin/UI/Widgets/imputFieldLogin.dart';
 
 import '../Widgets/custom_circle_avatar.dart';
 
@@ -72,13 +72,13 @@ class Contenedor2 extends StatelessWidget {
           SizedBox(
             height: size.height * 0.03,
           ),
-          Imputfield(
+          ImputfieldLogin(
               hintext: "User",
               prefixIcon: Icon(Icons.person_outline, color: kprimarycolor)),
           SizedBox(
             height: size.height * 0.03,
           ),
-          Imputfield(
+          ImputfieldLogin(
               hintext: "Password",
               prefixIcon: Icon(Icons.key_outlined, color: kprimarycolor)),
           SizedBox(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Imputfield extends StatelessWidget {
-  const Imputfield({
+class ImputfieldLogin extends StatelessWidget {
+  const ImputfieldLogin({
     Key? key,
     required this.hintext,
     this.suffixIcon,
@@ -16,17 +16,20 @@ class Imputfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
+          fillColor: Colors.white,
+          filled: true,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           contentPadding:
-              const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+              const EdgeInsets.symmetric(horizontal: 5, vertical: 18),
           border: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))),
+              borderRadius: BorderRadius.all(Radius.circular(5))),
           enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide(color: Color.fromRGBO(155, 155, 155, 0.5)),
-              borderRadius: BorderRadius.all(Radius.circular(10))),
+              borderRadius: BorderRadius.all(Radius.circular(5))),
           hintText: hintext,
-          hintStyle: const TextStyle(color: Colors.black54, fontSize: 15)),
+          hintStyle: const TextStyle(
+              color: Color.fromRGBO(179, 179, 179, 1), fontSize: 20)),
     );
   }
 }
