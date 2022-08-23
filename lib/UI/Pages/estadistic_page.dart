@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fly_admin/Constants/contants.dart';
 import 'package:fly_admin/UI/Widgets/custom_circle_avatar.dart';
 
+import '../Widgets/custom_drawer.dart';
+
 class StaticPage extends StatelessWidget {
   const StaticPage({Key? key}) : super(key: key);
 
@@ -9,6 +11,7 @@ class StaticPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: const CustomDrawer(),
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
