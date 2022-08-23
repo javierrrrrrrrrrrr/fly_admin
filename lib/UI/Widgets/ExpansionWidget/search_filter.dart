@@ -12,14 +12,14 @@ class SearchFilters extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.72,
+      height: size.height * 0.50,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
           width: 0.1,
         ),
         color: Colors.grey.shade100,
-        borderRadius: BorderRadius.all(Radius.circular(size.height * 0.01)),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(size.height * 0.01),topRight: Radius.circular(size.height * 0.01)),
       ),
       padding: EdgeInsets.only(
           left: size.width * 0.070,
@@ -32,7 +32,7 @@ class SearchFilters extends StatelessWidget {
             SizedBox(
               width: size.width * 0.12,
             ),
-            const TextSearch(texto: 'Charter'),
+            const TextSearch(texto: 'Search'),
           ],
         ),
         //Segunda Row
@@ -49,10 +49,9 @@ class SearchFilters extends StatelessWidget {
               ),
               SizedBox(
                 width: size.width * 0.318,
-                //TODO: Hacer el DropDownMeny de aqui.
+                //TODO: Hacer el DropDownMenu de aqui.
                 child: const Imputfield(
-                  hintext: " All",
-                  suffixIcon: Icon(Icons.arrow_drop_down),
+                  hintext: "Name or PNR",
                 ),
               ),
             ],
@@ -62,7 +61,9 @@ class SearchFilters extends StatelessWidget {
         SizedBox(
           height: size.height * 0.02,
         ),
-        const TextSearch(texto: 'Date from:/To:'),
+
+        const TextSearch(texto: 'Date From:/To:'),
+
         Row(
           children: [
             Padding(
@@ -102,59 +103,56 @@ class SearchFilters extends StatelessWidget {
         SizedBox(
           height: size.height * 0.02,
         ),
-        const TextSearch(texto: 'Route'),
-        //ROw
-        Padding(
-          padding: EdgeInsets.only(top: size.height * 0.01),
-          child: Row(
-            children: [
-              SizedBox(
-                width: size.width * 0.318,
-                child: const Imputfield(
-                  hintext: " From",
-                ),
-              ),
-              //separador width
-              SizedBox(
-                width: size.width * 0.11,
-              ),
-              SizedBox(
-                width: size.width * 0.318,
-                child: const Imputfield(
-                  hintext: " To",
-                ),
-              ),
-            ],
-          ),
+        Row(
+          children: [
+            const TextSearch(texto: 'Carrier'),
+            SizedBox(
+              width: size.width * 0.29,
+            ),
+            const TextSearch(texto: 'Agent'),
+          ],
         ),
-        //separador height
+        Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.01),
+              child: SizedBox(
+                width: size.width * 0.318,
+                child: Imputfield(
+                  hintext: "All",
+                  //Aqui va el action del calendar
+                  suffixIcon: Icon(
+                    Icons.arrow_drop_down,
+                    color: kprimarycolor,
+                  ),
+                ),
+              ),
+            ),
+            //separador
+            SizedBox(
+              width: size.width * 0.12,
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: size.height * 0.01),
+              child: SizedBox(
+                width: size.width * 0.318,
+                child: Imputfield(
+                  hintext: "All",
+                  //Aqui va el action del calendar
+                  suffixIcon: Icon(
+                    Icons.arrow_drop_down,
+                    color: kprimarycolor,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+
         SizedBox(
           height: size.height * 0.02,
         ),
-        const TextSearch(texto: 'Weekdays'),
-        SizedBox(
-          height: size.height * 0.01,
-        ),
-        Row(
-          children: const [
-            WeekedDay(texto: "S"),
-            CustomSpacer(),
-            WeekedDay(texto: "M"),
-            CustomSpacer(),
-            WeekedDay(texto: "T"),
-            CustomSpacer(),
-            WeekedDay(texto: "W"),
-            CustomSpacer(),
-            WeekedDay(texto: "T"),
-            CustomSpacer(),
-            WeekedDay(texto: "F"),
-            CustomSpacer(),
-            WeekedDay(texto: "S"),
-          ],
-        ),
-        SizedBox(
-          height: size.height * 0.035,
-        ),
+
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -168,38 +166,12 @@ class SearchFilters extends StatelessWidget {
         SizedBox(
           height: size.height * 0.03,
         ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: size.width * 0.18),
-          child: MaterialButton(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            onPressed: () {
-              Navigator.of(context).pushNamed('/result');
-            },
-            height: size.height * 0.05,
-            minWidth: size.width * 0.01,
-            color: const Color.fromRGBO(1, 63, 148, 1),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Icon(
-                  Icons.search,
-                  color: Colors.white,
-                  size: 28,
-                ),
-                SizedBox(
-                  width: size.width * 0.02,
-                ),
-                const Text("Search",
-                    style: TextStyle(color: Colors.white, fontSize: 18)),
-              ],
-            ),
-          ),
-        )
       ]),
     );
   }
 }
+
+
 
 class ColumnStatus1 extends StatelessWidget {
   const ColumnStatus1({
@@ -212,7 +184,7 @@ class ColumnStatus1 extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const TextSearch(texto: "Status"),
+        const TextSearch(texto: "Paid Status"),
         SizedBox(
           height: size.height * 0.004,
         ),
@@ -222,15 +194,10 @@ class ColumnStatus1 extends StatelessWidget {
             SizedBox(
               width: size.width * 0.015,
             ),
-            const TextSearch(texto: "Open"),
+            const TextSearch(texto: "Paid"),
             SizedBox(
               width: size.width * 0.010,
             ),
-            const Icon(
-              Icons.check_circle,
-              size: 18,
-              color: Colors.green,
-            )
           ],
         ),
         Row(
@@ -247,15 +214,10 @@ class ColumnStatus1 extends StatelessWidget {
                     SizedBox(
                       width: size.width * 0.015,
                     ),
-                    const TextSearch(texto: "Closed"),
+                    const TextSearch(texto: "Not Paid"),
                     SizedBox(
                       width: size.width * 0.010,
                     ),
-                    const Icon(
-                      Icons.cancel,
-                      size: 18,
-                      color: Colors.red,
-                    )
                   ],
                 ),
               ],
@@ -304,31 +266,6 @@ class CustomSpacer extends StatelessWidget {
   }
 }
 
-class WeekedDay extends StatelessWidget {
-  const WeekedDay({
-    Key? key,
-    required this.texto,
-  }) : super(key: key);
-
-  final String texto;
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Container(
-      decoration: BoxDecoration(
-          border:
-              Border.all(color: const Color.fromRGBO(1, 1, 1, 1), width: 0.5),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(6),
-          )),
-      height: size.height * 0.045,
-      width: size.width * 0.09,
-      child: Center(child: Text(texto)),
-    );
-  }
-}
-
 class TextSearch extends StatelessWidget {
   const TextSearch({
     Key? key,
@@ -357,14 +294,15 @@ class ColumnaStatus2 extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const TextSearch(texto: 'Gate'),
+        const TextSearch(texto: 'Status'),
         SizedBox(
           height: size.height * 0.01,
         ),
         SizedBox(
           width: size.width * 0.318,
           child: const Imputfield(
-            hintext: " Gate Number",
+            suffixIcon: Icon(Icons.arrow_drop_down),
+            hintext: "",
           ),
         ),
       ],
