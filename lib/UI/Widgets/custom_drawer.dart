@@ -37,7 +37,12 @@ class CustomDrawer extends StatelessWidget {
                 height: size.height * 0.03,
               ),
               const CustomRowDrawer(
-                  icono: Icons.house, texto: "House", tamnofuente: 18),
+                  icono: Icons.house, texto: "Home", tamnofuente: 18),
+              const Separador(),
+              const CustomRowDrawer(
+                  icono: Icons.admin_panel_settings_outlined,
+                  texto: "Create New Admin",
+                  tamnofuente: 18),
               const Separador(),
               CustomRowDrawer(
                   onPressed: () => Navigator.of(context).pushNamed('/search'),
@@ -59,7 +64,7 @@ class CustomDrawer extends StatelessWidget {
                   tamnofuente: 18),
               const Separador(),
               SizedBox(
-                height: size.height * 0.41,
+                height: size.height * 0.35,
               ),
               const Separador(),
               const CustomRowDrawer(
