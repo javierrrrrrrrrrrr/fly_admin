@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../../Constants/contants.dart';
+
 class FlightDetailsHeader extends StatelessWidget {
   const FlightDetailsHeader({
     Key? key,
-    required this.size,
   }) : super(key: key);
-
-  final Size size;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size.height * 0.02),
       child: Row(
@@ -19,7 +19,7 @@ class FlightDetailsHeader extends StatelessWidget {
           const Text('Havana Air'),
           // SeparadorHorizontal(numero: size.width * 0.09),
           Padding(
-            padding: EdgeInsets.only(right: size.width * 0.08),
+            padding: EdgeInsets.only(right: size.width * 0.02),
             child: SizedBox(
               height: size.height * 0.06,
               width: size.width * 0.2,
@@ -28,12 +28,17 @@ class FlightDetailsHeader extends StatelessWidget {
           ),
           //   SeparadorHorizontal(numero: size.width * 0.14),
           Row(
-            children: const [
-              Text('THU'),
-              Icon(
-                Icons.check_circle,
-                color: Colors.green,
-              )
+            children: [
+              MaterialButton(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8)),
+                  color: kprimarycolor,
+                  minWidth: size.width * 0.001,
+                  height: size.height * 0.035,
+                  child: const Center(
+                      child: Text("Checked in",
+                          style: TextStyle(fontSize: 14, color: Colors.white))),
+                  onPressed: () {}),
             ],
           )
         ],

@@ -15,9 +15,9 @@ class FlightDetailsBody extends StatelessWidget {
       children: [
         Column(
           children: const [
-            Text('Havana', style: TextStyle(fontSize: 12)),
+            Text('Fri', style: TextStyle(fontSize: 12)),
             Text('Hav', style: TextStyle(fontSize: 23)),
-            Text('9:50 AM', style: TextStyle(fontSize: 16)),
+            Text('8/12/22', style: TextStyle(fontSize: 16)),
           ],
         ),
         Column(
@@ -39,7 +39,7 @@ class FlightDetailsBody extends StatelessWidget {
           children: const [
             Text('Miami', style: TextStyle(fontSize: 12)),
             Text('Mia', style: TextStyle(fontSize: 23)),
-            Text('10:55 AM', style: TextStyle(fontSize: 16)),
+            Text('8/21/22', style: TextStyle(fontSize: 16)),
           ],
         ),
       ],
