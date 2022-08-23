@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'UI/Pages/estadistic_page.dart';
 import 'UI/Pages/login_page.dart';
 import 'UI/Pages/search_page.dart';
+import 'UI/Pages/search_result.dart';
 
 void main() => runApp(const MyApp());
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/login': (context) => const LoginPage(),
         '/estadistica': (context) => const StaticPage(),
         '/search': (context) => const SearchPage(),
+        '/result': (context) => const SearchResult(),
       },
     );
   }
