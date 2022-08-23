@@ -89,6 +89,33 @@ class FlyCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(25),
       ),
+      child: Padding(
+        padding:
+            EdgeInsets.only(left: size.width * 0.05, bottom: size.width * 0.04),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: size.height * 0.016,
+            ),
+            Row(
+              children: [
+                Icon(
+                  Icons.airplane_ticket_outlined,
+                  color: kprimarycolor,
+                ),
+                const Text(' Boletos vendidos'),
+              ],
+            ),
+            const Text(
+              '4.800',
+              style: TextStyle(fontSize: 22),
+            ),
+            const Text('Boletos vendidos'),
+          ],
+        ),
+      ),
     );
   }
 }
