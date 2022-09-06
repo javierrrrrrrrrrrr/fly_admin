@@ -19,29 +19,25 @@ class CustomDropDown extends StatefulWidget {
 }
 
 class _CustomDropDownState extends State<CustomDropDown> {
-   bool isFullyExpanded = false;
+  bool isFullyExpanded = true;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Column(
       children: [
         ExpansionWidget(
-          onExpansionChanged: (p0) {
-             setState(() {
-               isFullyExpanded = p0;
-             });
-          },
+            onExpansionChanged: (p0) {
+              setState(() {
+                isFullyExpanded = p0;
+              });
+            },
             initiallyExpanded: widget.expandido,
             titleBuilder:
                 (double animationValue, _, bool isExpaned, toogleFunction) {
               return InkWell(
                   onTap: () {
-                    
-                 
-                  
-                     toogleFunction(animated: true);
+                    toogleFunction(animated: true);
                   },
-                 
                   child: Padding(
                     //ver
                     padding: const EdgeInsets.symmetric(vertical: 10),
@@ -85,12 +81,13 @@ class _CustomDropDownState extends State<CustomDropDown> {
               ],
             )),
         SizedBox(
-          height: size.height * 0.15,
+          height: size.height * 0.05,
         ),
-        if(isFullyExpanded == true)
-          SizedBox(width: size.width * 0.4, child: const SearchButton())
-        
-       
+        if (isFullyExpanded == true)
+          SizedBox(width: size.width * 0.4, child: const SearchButton()),
+        SizedBox(
+          height: size.height * 0.08,
+        ),
       ],
     );
   }
@@ -151,7 +148,7 @@ class MoreSearchFilter extends StatelessWidget {
     final size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * 0.50,
+      height: size.height * 0.55,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,

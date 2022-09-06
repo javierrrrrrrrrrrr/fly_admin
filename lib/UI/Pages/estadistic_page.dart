@@ -1,3 +1,4 @@
+import 'package:charts_flutter/flutter.dart' as chart;
 import 'package:flutter/material.dart';
 import 'package:fly_admin/Constants/contants.dart';
 import 'package:fly_admin/UI/Widgets/custom_circle_avatar.dart';
@@ -9,6 +10,59 @@ class StaticPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> data = ["Javier", "Javier"];
+    List<chart.Series<dynamic, String>> seriesList = [
+      chart.Series(
+          id: "1",
+          data: data,
+          domainFn: ((datum, index) => "L"),
+          measureFn: ((datum, index) => 10),
+          colorFn: (datum, index) => const chart.Color(
+                r: 1,
+                g: 142,
+                b: 170,
+              )),
+      chart.Series(
+          id: "2",
+          data: data,
+          domainFn: ((datum, index) => "Ma"),
+          measureFn: ((datum, index) => 8),
+          colorFn: (datum, index) => const chart.Color(
+                r: 1,
+                g: 142,
+                b: 170,
+              )),
+      chart.Series(
+          id: "3",
+          data: data,
+          domainFn: ((datum, index) => "Mi"),
+          measureFn: ((datum, index) => 8),
+          colorFn: (datum, index) => const chart.Color(
+                r: 1,
+                g: 142,
+                b: 170,
+              )),
+      chart.Series(
+          id: "4",
+          data: data,
+          domainFn: ((datum, index) => "J"),
+          measureFn: ((datum, index) => 8),
+          colorFn: (datum, index) => const chart.Color(
+                r: 1,
+                g: 142,
+                b: 170,
+              )),
+      chart.Series(
+          id: "5",
+          data: data,
+          domainFn: ((datum, index) => "V"),
+          measureFn: ((datum, index) => 8),
+          colorFn: (datum, index) => const chart.Color(
+                r: 1,
+                g: 142,
+                b: 170,
+              )),
+    ];
     final size = MediaQuery.of(context).size;
     return Scaffold(
       drawer: const CustomDrawer(),
@@ -67,6 +121,11 @@ class StaticPage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(25),
+                ),
+                child: chart.BarChart(
+                  barGroupingType: chart.BarGroupingType.grouped,
+                  seriesList,
+                  animate: true,
                 ),
               ),
             ],

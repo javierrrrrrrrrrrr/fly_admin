@@ -1,0 +1,33 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "reproductor",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "device 1",
+            "request": "launch",
+            "type": "dart",       
+            "deviceId": "M2102J20SG"
+        },
+        {
+            "name": "device 2",
+            "request": "launch",
+            "type": "dart",         
+            "deviceId": "Redmi"
+        },
+        
+    ],
+    "compounds": [
+        {
+            "name": "All Devices",
+            "configurations": ["device 1","device 2"]
+        }
+    ]
+
+}

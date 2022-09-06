@@ -12,14 +12,16 @@ class SearchFilters extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
-      height: size.height * 0.50,
+      height: size.height * 0.55,
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
           width: 0.1,
         ),
         color: Colors.grey.shade100,
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(size.height * 0.01),topRight: Radius.circular(size.height * 0.01)),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(size.height * 0.01),
+            topRight: Radius.circular(size.height * 0.01)),
       ),
       padding: EdgeInsets.only(
           left: size.width * 0.070,
@@ -170,8 +172,6 @@ class SearchFilters extends StatelessWidget {
     );
   }
 }
-
-
 
 class ColumnStatus1 extends StatelessWidget {
   const ColumnStatus1({
